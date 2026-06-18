@@ -1320,6 +1320,11 @@ h1, h2, h3, h4, h5, h6 {
     --section-padding: 6rem 0;
   }
   
+  .custom-cursor,
+  .custom-cursor-follower {
+    display: none !important;
+  }
+  
   .section-title {
     font-size: 2.25rem;
   }
@@ -1411,6 +1416,10 @@ h1, h2, h3, h4, h5, h6 {
     width: 100%;
   }
   
+  .floating-3d-card-wrapper {
+    max-width: 100%;
+  }
+  
   .section-title {
     font-size: 1.85rem;
   }
@@ -1422,4 +1431,14 @@ h1, h2, h3, h4, h5, h6 {
   .timeline-dot {
     left: -1.6rem;
   }
+  
+  .contact-card-centered {
+    padding: 3rem 1rem;
+  }
+}
+
+/* Scroll lock helper */
+body.no-scroll {
+  overflow: hidden;
+  height: 100vh;
 }
