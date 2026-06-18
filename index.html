@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kailas Solanke | Java Backend & Cryptography Engineer</title>
+  <meta name="description" content="Personal portfolio of Kailas Solanke, Software Engineer specializing in cryptographic algorithms, Spring Boot backends, and high-performance Netty systems.">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-theme">
+  <!-- Custom Cursor -->
+  <div class="custom-cursor"></div>
+  <div class="custom-cursor-follower"></div>
+
+  <!-- Grain/Noise Texture Overlay -->
+  <div class="noise-overlay"></div>
+
+  <!-- Header / Navigation -->
+  <header class="header">
+    <div class="header-container">
+      <a href="#" class="logo">
+        <span class="logo-dot"></span>
+        Kailas Solanke
+      </a>
+      <nav class="nav">
+        <a href="#about" class="nav-link">About</a>
+        <a href="#work" class="nav-link">Projects</a>
+        <a href="#experience" class="nav-link">Experience</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+      <div class="nav-cta">
+        <a href="kailas_solanke.pdf" target="_blank" class="btn btn-outline" download>
+          <span>Get Resume</span>
+          <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+            <polyline points="7 10 12 15 17 10" />
+            <line x1="12" y1="15" x2="12" y2="3" />
+          </svg>
+        </a>
+      </div>
+      <button class="mobile-nav-toggle" aria-label="Toggle navigation">
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Menu -->
+  <div class="mobile-menu">
+    <nav class="mobile-nav">
+      <a href="#about" class="mobile-link">About</a>
+      <a href="#work" class="mobile-link">Projects</a>
+      <a href="#experience" class="mobile-link">Experience</a>
+      <a href="#skills" class="mobile-link">Skills</a>
+      <a href="#contact" class="mobile-link">Contact</a>
+      <a href="kailas_solanke.pdf" target="_blank" class="mobile-btn" download>Get Resume</a>
+    </nav>
+  </div>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="container hero-container">
+        <div class="hero-content">
+          <div class="status-badge" data-aos="fade-up">
+            <span class="status-pulse"></span>
+            <span>Available for engineering roles</span>
+          </div>
+          
+          <h1 class="hero-title" data-aos="fade-up" data-aos-delay="100">
+            Building secure, high-performance <span class="gradient-text">backend architectures</span>.
+          </h1>
+          
+          <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="200">
+            Hello, I'm Kailas. I am a Software Engineer based in Pune, India. Currently engineering cryptographic implementations and secure JNI bindings at FortyTwo Labs.
+          </p>
+          
+          <div class="hero-actions" data-aos="fade-up" data-aos-delay="300">
+            <a href="#work" class="btn btn-primary">
+              <span>View Projects</span>
+              <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12" />
+                <polyline points="12 5 19 12 12 19" />
+              </svg>
+            </a>
+            <a href="#contact" class="btn btn-secondary">
+              <span>Contact details</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-graphics" data-aos="fade-left">
+          <!-- Developer Profile ID Badge Card -->
+          <div class="floating-3d-card-wrapper">
+            <div class="floating-3d-card tilt-target">
+              <div class="card-inner">
+                <!-- Textured Minimal Badge Header Graphic -->
+                <div class="profile-avatar-container">
+                  <div class="badge-graphic-texture">
+                    <!-- Elegant Abstract Security Vector Shape representing cryptographic core -->
+                    <svg class="badge-svg-core" viewBox="0 0 100 100" fill="none">
+                      <circle cx="50" cy="50" r="40" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+                      <circle cx="50" cy="50" r="30" stroke="rgba(255,255,255,0.15)" stroke-width="1" stroke-dasharray="4 4"/>
+                      <circle cx="50" cy="50" r="20" stroke="white" stroke-width="1.5"/>
+                      <path d="M50 12 L50 88 M12 50 L88 50" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+                      <polygon points="50,38 58,55 42,55" fill="white"/>
+                      <rect x="47" y="58" width="6" height="10" fill="white"/>
+                    </svg>
+                  </div>
+                </div>
+                
+                <div class="profile-badge-details">
+                  <div class="profile-role-tag">Software Engineer</div>
+                  <h3 class="profile-name">Kailas Solanke</h3>
+                  <p class="profile-focus">Java • Cryptography • Netty</p>
+                </div>
+                
+                <div class="card-footer-status">
+                  <div class="footer-status-left">
+                    <span class="status-indicator"></span> Active at FortyTwo Labs
+                  </div>
+                  <span class="location-tag">Pune, India</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Me Philosophy Section -->
+    <section id="about" class="section about-section">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-philosophy" data-aos="fade-right">
+            <p class="section-tagline">My Philosophy</p>
+            <h2 class="about-heading">I design backends with restraint, and build them with security.</h2>
+          </div>
+          <div class="about-description" data-aos="fade-left">
+            <p>
+              I believe robust systems are built from clean abstractions, low-latency communications, and strict cryptographic bounds. For me, software engineering isn't just about making things run—it's about making sure they run predictably under high load and remain mathematically secure.
+            </p>
+            <p>
+              Whether leveraging <strong>Netty</strong> for asynchronous TCP networks or writing custom <strong>JNI</strong> bindings to interface Java applications with low-level C cryptographic libraries, I focus on performance and compliance at every layer.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Work / Projects Section -->
+    <section id="work" class="section work-section">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-tagline">Projects</p>
+          <h2 class="section-title">Projects shaped by clarity and security.</h2>
+        </div>
+
+        <div class="projects-grid">
+          <!-- Project 1: JobVista Portal -->
+          <div class="project-card-wrapper" data-aos="fade-up">
+            <div class="project-card tilt-target">
+              <div class="project-image-container">
+                <!-- Minimal Static Graphic for JobVista -->
+                <div class="project-mockup-graphic">
+                  <div class="mockup-header-bar">
+                    <span class="mockup-dot"></span>
+                    <span class="mockup-dot"></span>
+                    <span class="mockup-dot"></span>
+                  </div>
+                  <div class="mockup-layout-body">
+                    <div class="mockup-lock-badge">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                        <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                      </svg>
+                      <span>SECURE PORTAL</span>
+                    </div>
+                    <div class="mockup-lines-group">
+                      <div class="mockup-text-line wide"></div>
+                      <div class="mockup-text-line medium"></div>
+                      <div class="mockup-text-line short"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="project-tag">Full-Stack</div>
+              </div>
+              <div class="project-info">
+                <div class="project-meta">Java • Spring Boot • React.js • MySQL</div>
+                <h3 class="project-name">JobVista Portal</h3>
+                <p class="project-description">
+                  Engineered a secure full-stack job board utilizing role-based access controls. Developed robust REST APIs with Spring Boot and designed a normalized MySQL database schema.
+                </p>
+                <div class="project-links">
+                  <a href="https://github.com/Kailas8379" target="_blank" class="project-link-btn">
+                    <span>View Project Code</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="link-arrow">
+                      <line x1="7" y1="17" x2="17" y2="7"></line>
+                      <polyline points="7 7 17 7 17 17"></polyline>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2: Sorting Visualization Application -->
+          <div class="project-card-wrapper" data-aos="fade-up" data-aos-delay="100">
+            <div class="project-card tilt-target">
+              <div class="project-image-container">
+                <!-- Minimal Static Graphic for Sorting Visualizer -->
+                <div class="project-mockup-graphic">
+                  <div class="mockup-header-bar">
+                    <span class="mockup-dot"></span>
+                    <span class="mockup-dot"></span>
+                    <span class="mockup-dot"></span>
+                  </div>
+                  <div class="mockup-layout-body centered-mockup">
+                    <!-- Clean static representation of sorting bars -->
+                    <div class="mockup-sorting-array">
+                      <div class="mockup-bar" style="height: 20px;"></div>
+                      <div class="mockup-bar" style="height: 45px;"></div>
+                      <div class="mockup-bar active" style="height: 70px;"></div>
+                      <div class="mockup-bar" style="height: 35px;"></div>
+                      <div class="mockup-bar" style="height: 85px;"></div>
+                      <div class="mockup-bar active" style="height: 50px;"></div>
+                      <div class="mockup-bar" style="height: 30px;"></div>
+                      <div class="mockup-bar" style="height: 60px;"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="project-tag">Desktop App</div>
+              </div>
+              <div class="project-info">
+                <div class="project-meta">Java • JavaFX • Multithreading</div>
+                <h3 class="project-name">Sorting Visualizer</h3>
+                <p class="project-description">
+                  Architected an interactive application showing real-time comparative algorithm performance. Implemented multithreaded updates for smooth, non-blocking UI interactions.
+                </p>
+                <div class="project-links">
+                  <a href="https://github.com/Kailas8379" target="_blank" class="project-link-btn">
+                    <span>View Project Code</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="link-arrow">
+                      <line x1="7" y1="17" x2="17" y2="7"></line>
+                      <polyline points="7 7 17 7 17 17"></polyline>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section experience-section">
+      <div class="container">
+        <div class="experience-layout">
+          <div class="experience-sticky">
+            <p class="section-tagline">My Journey</p>
+            <h2 class="section-title">Where logic meets enterprise engineering.</h2>
+            <p class="experience-sticky-desc">
+              Professional experience timeline and academic credentials detailing my work in cryptographic systems and backend microservices.
+            </p>
+            
+            <div class="stats-grid">
+              <div class="stat-card tilt-target">
+                <div class="stat-num">FortyTwo</div>
+                <div class="stat-label">Labs Software Engineer</div>
+              </div>
+              <div class="stat-card tilt-target">
+                <div class="stat-num">PostGrad</div>
+                <div class="stat-label">Diploma in Computing</div>
+              </div>
+              <div class="stat-card tilt-target">
+                <div class="stat-num">BE</div>
+                <div class="stat-label">Computer Engineering Degree</div>
+              </div>
+              <div class="stat-card tilt-target">
+                <div class="stat-num">7.62</div>
+                <div class="stat-label">Academic CGPA</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline">
+            <!-- Experience 1: FortyTwo Labs -->
+            <div class="timeline-item" data-aos="fade-up">
+              <div class="timeline-dot"></div>
+              <div class="timeline-header">
+                <span class="timeline-date">2025 — Present</span>
+                <h3 class="timeline-role">Software Engineer</h3>
+                <h4 class="timeline-company">FortyTwo Labs <span class="timeline-location">Pune, India</span></h4>
+              </div>
+              <div class="timeline-body">
+                <p>Engineering robust, security-critical backend infrastructures, specializing in cryptography and native platform integrations.</p>
+                <ul class="timeline-bullets">
+                  <li>Implement cryptographic algorithms for a CryptoServer platform, handling secure key management, encryption/decryption operations, and algorithm lifecycle.</li>
+                  <li>Develop and maintain INIT self-signed and cryptographic signature verification workflows, ensuring protocol-level security compliance.</li>
+                  <li>Build and expose RESTful APIs using Spring Boot to integrate cryptographic services with client applications.</li>
+                  <li>Leverage Netty for high-performance, asynchronous network communication, optimizing low-latency data transfer between system components.</li>
+                  <li>Write JNI (Java Native Interface) bindings to bridge Java application logic with native cryptographic libraries, enabling seamless platform-level security.</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Education Timeline Items -->
+            <div class="timeline-item" data-aos="fade-up">
+              <div class="timeline-dot"></div>
+              <div class="timeline-header">
+                <span class="timeline-date">2024 — 2025</span>
+                <h3 class="timeline-role">Post Graduate Diploma in Advanced Computing (PG-DAC)</h3>
+                <h4 class="timeline-company">IACSD - Institute of Advanced Computing & Software Development <span class="timeline-location">Pune, India</span></h4>
+              </div>
+              <div class="timeline-body">
+                <p>Completed intensive training in enterprise software engineering, database design, advanced structures, and multi-tier systems.</p>
+              </div>
+            </div>
+
+            <div class="timeline-item" data-aos="fade-up">
+              <div class="timeline-dot"></div>
+              <div class="timeline-header">
+                <span class="timeline-date">2021 — 2024</span>
+                <h3 class="timeline-role">Bachelor of Engineering (Computer Engineering)</h3>
+                <h4 class="timeline-company">Savitribai Phule Pune University <span class="timeline-location">Pune, India</span></h4>
+              </div>
+              <div class="timeline-body">
+                <p>Graduated with a CGPA of 7.62/10. Core coursework included Operating Systems, Networking, DBMS, and Object-Oriented Architectures.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section skills-section">
+      <div class="container">
+        <div class="section-header center-align">
+          <p class="section-tagline">My Stack</p>
+          <h2 class="section-title">Core capabilities & technologies.</h2>
+        </div>
+
+        <div class="skills-grid">
+          <!-- Category 1 -->
+          <div class="skills-category-card tilt-target" data-aos="fade-up">
+            <h3 class="skills-category-title">Languages & Frameworks</h3>
+            <div class="skills-tags">
+              <span class="skill-tag">Java</span>
+              <span class="skill-tag">Spring Boot</span>
+              <span class="skill-tag">Spring MVC</span>
+              <span class="skill-tag">Hibernate (JPA)</span>
+              <span class="skill-tag">Netty</span>
+              <span class="skill-tag">React.js</span>
+              <span class="skill-tag">Bootstrap</span>
+              <span class="skill-tag">HTML5 / CSS3</span>
+            </div>
+          </div>
+
+          <!-- Category 2 -->
+          <div class="skills-category-card tilt-target" data-aos="fade-up" data-aos-delay="100">
+            <h3 class="skills-category-title">Security & Cryptography</h3>
+            <div class="skills-tags">
+              <span class="skill-tag accent-tag">Cryptographic Algorithms</span>
+              <span class="skill-tag accent-tag">CryptoServer Integration</span>
+              <span class="skill-tag accent-tag">JNI (Java Native Interface)</span>
+              <span class="skill-tag accent-tag">Self-Signed Certs (INIT)</span>
+              <span class="skill-tag accent-tag">Digital Signatures</span>
+              <span class="skill-tag accent-tag">Signature Verification</span>
+            </div>
+          </div>
+
+          <!-- Category 3 -->
+          <div class="skills-category-card tilt-target" data-aos="fade-up" data-aos-delay="200">
+            <h3 class="skills-category-title">Architecture & Databases</h3>
+            <div class="skills-tags">
+              <span class="skill-tag">RESTful APIs</span>
+              <span class="skill-tag">Microservices</span>
+              <span class="skill-tag">System Integration</span>
+              <span class="skill-tag">MySQL</span>
+              <span class="skill-tag">MongoDB</span>
+              <span class="skill-tag">Database Normalization</span>
+            </div>
+          </div>
+
+          <!-- Category 4 -->
+          <div class="skills-category-card tilt-target" data-aos="fade-up" data-aos-delay="300">
+            <h3 class="skills-category-title">Testing, Tools & Practices</h3>
+            <div class="skills-tags">
+              <span class="skill-tag">JUnit</span>
+              <span class="skill-tag">Integration Testing</span>
+              <span class="skill-tag">Functional Testing</span>
+              <span class="skill-tag">Git & GitHub</span>
+              <span class="skill-tag">Linux Systems</span>
+              <span class="skill-tag">Microsoft Azure</span>
+              <span class="skill-tag">Maven</span>
+              <span class="skill-tag">Agile / Scrum</span>
+              <span class="skill-tag">SDLC</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact-section">
+      <div class="container">
+        <div class="contact-card tilt-target" data-aos="zoom-in">
+          <div class="contact-card-centered">
+            <p class="section-tagline">Contact</p>
+            <h2 class="contact-title">Let's build something secure.</h2>
+            <p class="contact-description">
+              I'm always open to discussing backend architecture challenges, cryptography integrations, or software engineering opportunities.
+            </p>
+            
+            <div class="contact-details-row">
+              <a href="mailto:kailashsolanke83@gmail.com" class="contact-detail-pill">
+                <div class="contact-icon-wrapper">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                    <polyline points="22,6 12,13 2,6" />
+                  </svg>
+                </div>
+                <span>kailashsolanke83@gmail.com</span>
+              </a>
+              
+              <a href="tel:+918379877267" class="contact-detail-pill">
+                <div class="contact-icon-wrapper">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                  </svg>
+                </div>
+                <span>+91-8379877267</span>
+              </a>
+
+              <div class="contact-detail-pill">
+                <div class="contact-icon-wrapper">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z" />
+                    <circle cx="12" cy="10" r="3" />
+                  </svg>
+                </div>
+                <span>Pune, India</span>
+              </div>
+            </div>
+
+            <div class="social-links centered">
+              <a href="https://github.com/Kailas8379" target="_blank" class="social-icon-btn" aria-label="GitHub">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                </svg>
+              </a>
+              <a href="https://linkedin.com/in/kailas-solanke-87ba7a212" target="_blank" class="social-icon-btn" aria-label="LinkedIn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                  <rect x="2" y="9" width="4" height="12"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-container">
+      <div class="footer-left">
+        <a href="#" class="footer-logo">Kailas Solanke</a>
+        <p class="footer-copy">&copy; 2026 Kailas Solanke. All rights reserved.</p>
+      </div>
+      <div class="footer-right">
+        <div class="footer-links">
+          <a href="#about" class="footer-link">About</a>
+          <a href="#work" class="footer-link">Projects</a>
+          <a href="#experience" class="footer-link">Experience</a>
+          <a href="#skills" class="footer-link">Skills</a>
+          <a href="#contact" class="footer-link">Contact</a>
+        </div>
+        <p class="footer-attribution">Built with intent.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="app.js"></script>
+</body>
+</html>
