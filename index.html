@@ -25,8 +25,8 @@
   <header class="header">
     <div class="header-container">
       <a href="#" class="logo">
-        <span class="logo-dot"></span>
-        Kailas Solanke
+        <canvas id="logo-3d-face" width="32" height="32"></canvas>
+        <span>Kailas Solanke</span>
       </a>
       <nav class="nav">
         <a href="#about" class="nav-link">About</a>
@@ -101,18 +101,10 @@
           <div class="floating-3d-card-wrapper">
             <div class="floating-3d-card tilt-target">
               <div class="card-inner">
-                <!-- Textured Minimal Badge Header Graphic -->
+                <!-- 3D Face Canvas Container (Matches B&W portrait style in design reference) -->
                 <div class="profile-avatar-container">
                   <div class="badge-graphic-texture">
-                    <!-- Elegant Abstract Security Vector Shape representing cryptographic core -->
-                    <svg class="badge-svg-core" viewBox="0 0 100 100" fill="none">
-                      <circle cx="50" cy="50" r="40" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
-                      <circle cx="50" cy="50" r="30" stroke="rgba(255,255,255,0.15)" stroke-width="1" stroke-dasharray="4 4"/>
-                      <circle cx="50" cy="50" r="20" stroke="white" stroke-width="1.5"/>
-                      <path d="M50 12 L50 88 M12 50 L88 50" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
-                      <polygon points="50,38 58,55 42,55" fill="white"/>
-                      <rect x="47" y="58" width="6" height="10" fill="white"/>
-                    </svg>
+                    <canvas id="hero-3d-face"></canvas>
                   </div>
                 </div>
                 

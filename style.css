@@ -79,7 +79,7 @@ body {
   z-index: 9999;
 }
 
-/* Subtle Architectural Grid Texture (Minimalist design detail) */
+/* Subtle Architectural Dot Grid Texture (Minimalist design detail) */
 body::before {
   content: '';
   position: fixed;
@@ -87,13 +87,18 @@ body::before {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-image: 
-    linear-gradient(rgba(255, 255, 255, 0.01) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.01) 1px, transparent 1px);
-  background-size: 60px 60px;
-  background-position: center center;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+  background-size: 24px 24px;
   pointer-events: none;
   z-index: 1;
+}
+
+#logo-3d-face {
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 0.5rem;
 }
 
 /* Custom Mouse Cursor */
@@ -551,19 +556,15 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #0a0a0c 0%, #17171a 100%);
+  background: #000000;
   position: relative;
 }
 
-.badge-svg-core {
-  width: 50%;
-  height: 50%;
-  opacity: 0.85;
-  transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
-}
-
-.floating-3d-card:hover .badge-svg-core {
-  transform: rotate(45deg);
+#hero-3d-face {
+  width: 100%;
+  height: 100%;
+  display: block;
+  background: transparent;
 }
 
 .profile-badge-details {
@@ -1441,4 +1442,37 @@ h1, h2, h3, h4, h5, h6 {
 body.no-scroll {
   overflow: hidden;
   height: 100vh;
+}
+
+/* Card hover magnetic glow effect */
+.tilt-target {
+  position: relative;
+  overflow: hidden;
+}
+
+.tilt-target::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    300px circle at var(--mouse-x, 0px) var(--mouse-y, 0px),
+    rgba(255, 255, 255, 0.05),
+    transparent 60%
+  );
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tilt-target:hover::before {
+  opacity: 1;
+}
+
+.tilt-target > * {
+  position: relative;
+  z-index: 2;
 }
