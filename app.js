@@ -176,240 +176,36 @@ function initMagneticGlow() {
 }
 
 /* =========================================================================
-   3D Wireframe Face Renderers (Logo & Hero profile avatar - Realistic low-poly)
+   3D Drifting Space Skills Particle Visualizer (Replaces Face Mesh)
    ========================================================================= */
 function init3DFaceRenderers() {
-  // 3D low-poly wireframe models definitions
-  const MODELS = {
-    face: {
-      vertices: [
-        {x: 0, y: 1.5, z: 0.2},         // 0: Center top forehead
-        {x: -0.4, y: 1.4, z: 0.15},      // 1: Left top forehead
-        {x: 0.4, y: 1.4, z: 0.15},       // 2: Right top forehead
-        {x: -0.7, y: 1.1, z: 0.05},      // 3: Left temple high
-        {x: 0.7, y: 1.1, z: 0.05},       // 4: Right temple high
-        {x: 0, y: 1.0, z: 0.4},          // 5: Mid forehead center
-        {x: -0.35, y: 0.95, z: 0.35},    // 6: Mid forehead left
-        {x: 0.35, y: 0.95, z: 0.35},     // 7: Mid forehead right
-        {x: -0.75, y: 0.8, z: 0.15},     // 8: Temple left mid
-        {x: 0.75, y: 0.8, z: 0.15},      // 9: Temple right mid
-        {x: -0.6, y: 0.6, z: 0.38},      // 10: Brow left outer
-        {x: -0.32, y: 0.65, z: 0.46},    // 11: Brow left middle
-        {x: -0.1, y: 0.58, z: 0.48},     // 12: Brow left inner
-        {x: 0.1, y: 0.58, z: 0.48},      // 13: Brow right inner
-        {x: 0.32, y: 0.65, z: 0.46},     // 14: Brow right middle
-        {x: 0.6, y: 0.6, z: 0.38},       // 15: Brow right outer
-        {x: 0, y: 0.48, z: 0.54},        // 16: Nose bridge top
-        {x: 0, y: 0.15, z: 0.72},        // 17: Nose bridge mid
-        {x: 0, y: -0.22, z: 0.95},       // 18: Nose tip
-        {x: 0, y: -0.38, z: 0.76},       // 19: Nose base center
-        {x: -0.22, y: -0.32, z: 0.72},   // 20: Nose left nostril outer
-        {x: 0.22, y: -0.32, z: 0.72},    // 21: Nose right nostril outer
-        {x: -0.1, y: -0.38, z: 0.74},     // 22: Nose left nostril bottom
-        {x: 0.1, y: -0.38, z: 0.74},      // 23: Nose right nostril bottom
-        {x: -0.16, y: 0.32, z: 0.48},    // 24: Left eye inner corner
-        {x: -0.48, y: 0.32, z: 0.38},    // 25: Left eye outer corner
-        {x: -0.32, y: 0.4, z: 0.46},     // 26: Left eye top
-        {x: -0.32, y: 0.24, z: 0.44},    // 27: Left eye bottom
-        {x: -0.32, y: 0.32, z: 0.43},    // 28: Left pupil/center
-        {x: 0.16, y: 0.32, z: 0.48},     // 29: Right eye inner corner
-        {x: 0.48, y: 0.32, z: 0.38},     // 30: Right eye outer corner
-        {x: 0.32, y: 0.4, z: 0.46},      // 31: Right eye top
-        {x: 0.32, y: 0.24, z: 0.44},     // 32: Right eye bottom
-        {x: 0.32, y: 0.32, z: 0.43},     // 33: Right pupil/center
-        {x: -0.82, y: 0.2, z: 0.22},     // 34: Cheekbone left outer
-        {x: 0.82, y: 0.2, z: 0.22},      // 35: Cheekbone right outer
-        {x: -0.52, y: -0.05, z: 0.42},   // 36: Cheek left mid
-        {x: 0.52, y: -0.05, z: 0.42},    // 37: Cheek right mid
-        {x: -0.32, y: -0.38, z: 0.58},   // 38: Nasolabial fold left
-        {x: 0.32, y: -0.38, z: 0.58},    // 39: Nasolabial fold right
-        {x: -0.08, y: -0.5, z: 0.69},    // 40: Upper lip top center L
-        {x: 0.08, y: -0.5, z: 0.69},     // 41: Upper lip top center R
-        {x: -0.28, y: -0.58, z: 0.6},    // 42: Mouth corner left
-        {x: 0.28, y: -0.58, z: 0.6},     // 43: Mouth corner right
-        {x: 0, y: -0.56, z: 0.66},       // 44: Lip join center
-        {x: 0, y: -0.7, z: 0.64},        // 45: Lower lip bottom center
-        {x: -0.16, y: -0.53, z: 0.64},   // 46: Upper lip left mid
-        {x: 0.16, y: -0.53, z: 0.64},    // 47: Upper lip right mid
-        {x: -0.14, y: -0.65, z: 0.62},   // 48: Lower lip left mid
-        {x: 0.14, y: -0.65, z: 0.62},    // 49: Lower lip right mid
-        {x: 0, y: -1.0, z: 0.52},        // 50: Chin tip top
-        {x: 0, y: -1.2, z: 0.45},        // 51: Chin tip bottom
-        {x: 0, y: -1.35, z: 0.25},       // 52: Chin base
-        {x: -0.68, y: -0.78, z: 0.05},   // 53: Jaw angle left
-        {x: 0.68, y: -0.78, z: 0.05},    // 54: Jaw angle right
-        {x: -0.4, y: -1.02, z: 0.28},    // 55: Jaw mid left
-        {x: 0.4, y: -1.02, z: 0.28},     // 56: Jaw mid right
-        {x: -0.18, y: -0.9, z: 0.46},    // 57: Chin left crease
-        {x: 0.18, y: -0.9, z: 0.46}      // 58: Chin right crease
-      ],
-      connections: [
-        [0, 1], [1, 3], [0, 2], [2, 4],
-        [0, 5], [1, 6], [2, 7], [3, 8], [4, 9],
-        [5, 6], [6, 8], [5, 7], [7, 9],
-        [1, 5], [2, 5],
-        [5, 12], [5, 13], [6, 11], [7, 14], [8, 10], [9, 15],
-        [10, 11], [11, 12], [12, 13], [13, 14], [14, 15],
-        [12, 16], [13, 16], [16, 17], [17, 18], [18, 19],
-        [17, 20], [17, 21], [18, 20], [18, 21], [20, 22], [21, 23], [22, 19], [23, 19],
-        [24, 26], [26, 25], [25, 27], [27, 24],
-        [28, 24], [28, 25], [28, 26], [28, 27],
-        [11, 26], [12, 24], [10, 25], [24, 16], [24, 17],
-        [29, 31], [31, 30], [30, 32], [32, 29],
-        [33, 29], [33, 30], [33, 31], [33, 32],
-        [14, 31], [13, 29], [15, 30], [29, 16], [29, 17],
-        [3, 34], [4, 35], [25, 34], [30, 35],
-        [34, 36], [35, 37], [25, 36], [30, 37],
-        [36, 38], [37, 39], [36, 42], [37, 43],
-        [20, 38], [21, 39], [19, 38], [19, 39],
-        [40, 41], [40, 46], [41, 47], [46, 42], [47, 43],
-        [42, 44], [43, 44], [40, 44], [41, 44],
-        [42, 48], [43, 49], [48, 45], [49, 45], [44, 45],
-        [19, 40], [19, 41], [20, 46], [21, 47],
-        [53, 55], [55, 51], [54, 56], [56, 51], [51, 52],
-        [34, 53], [35, 54],
-        [36, 53], [37, 54], [36, 55], [37, 56],
-        [42, 57], [43, 58], [48, 57], [49, 58],
-        [45, 50], [57, 50], [58, 50], [50, 51], [57, 55], [58, 56]
-      ]
-    },
-    java: {
-      vertices: [
-        {x: -0.3, y: 0.4, z: 0},
-        {x: -0.21, y: 0.4, z: 0.21},
-        {x: 0, y: 0.4, z: 0.3},
-        {x: 0.21, y: 0.4, z: 0.21},
-        {x: 0.3, y: 0.4, z: 0},
-        {x: 0.21, y: 0.4, z: -0.21},
-        {x: 0, y: 0.4, z: -0.3},
-        {x: -0.21, y: 0.4, z: -0.21},
-        {x: -0.2, y: -0.4, z: 0},
-        {x: -0.14, y: -0.4, z: 0.14},
-        {x: 0, y: -0.4, z: 0.2},
-        {x: 0.14, y: -0.4, z: 0.14},
-        {x: 0.2, y: -0.4, z: 0},
-        {x: 0.14, y: -0.4, z: -0.14},
-        {x: 0, y: -0.4, z: -0.2},
-        {x: -0.14, y: -0.4, z: -0.14},
-        {x: 0.3, y: 0.2, z: 0},
-        {x: 0.5, y: 0.2, z: 0},
-        {x: 0.5, y: -0.2, z: 0},
-        {x: 0.2, y: -0.2, z: 0},
-        {x: -0.1, y: 0.5, z: 0},
-        {x: -0.05, y: 0.7, z: 0.1},
-        {x: -0.1, y: 0.9, z: 0},
-        {x: 0.1, y: 0.5, z: 0},
-        {x: 0.15, y: 0.7, z: -0.1},
-        {x: 0.1, y: 0.9, z: 0}
-      ],
-      connections: [
-        [0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 0],
-        [8, 9], [9, 10], [10, 11], [11, 12], [12, 13], [13, 14], [14, 15], [15, 8],
-        [0, 8], [1, 9], [2, 10], [3, 11], [4, 12], [5, 13], [6, 14], [7, 15],
-        [4, 16], [16, 17], [17, 18], [18, 19], [19, 12],
-        [20, 21], [21, 22], [23, 24], [24, 25]
-      ]
-    },
-    docker: {
-      vertices: [
-        {x: 0, y: -0.4, z: 0.8},
-        {x: 0, y: -0.1, z: 0.8},
-        {x: -0.4, y: -0.1, z: 0},
-        {x: 0.4, y: -0.1, z: 0},
-        {x: -0.3, y: -0.1, z: -0.7},
-        {x: 0.3, y: -0.1, z: -0.7},
-        {x: -0.3, y: -0.4, z: 0},
-        {x: 0.3, y: -0.4, z: 0},
-        {x: -0.25, y: -0.1, z: 0.3},
-        {x: -0.05, y: -0.1, z: 0.3},
-        {x: -0.25, y: -0.1, z: -0.3},
-        {x: -0.05, y: -0.1, z: -0.3},
-        {x: -0.25, y: 0.15, z: 0.3},
-        {x: -0.05, y: 0.15, z: 0.3},
-        {x: -0.25, y: 0.15, z: -0.3},
-        {x: -0.05, y: 0.15, z: -0.3},
-        {x: 0.05, y: -0.1, z: 0.2},
-        {x: 0.25, y: -0.1, z: 0.2},
-        {x: 0.05, y: -0.1, z: -0.4},
-        {x: 0.25, y: -0.1, z: -0.4},
-        {x: 0.05, y: 0.15, z: 0.2},
-        {x: 0.25, y: 0.15, z: 0.2},
-        {x: 0.05, y: 0.15, z: -0.4},
-        {x: 0.25, y: 0.15, z: -0.4},
-        {x: -0.1, y: 0.15, z: 0.1},
-        {x: 0.1, y: 0.15, z: 0.1},
-        {x: -0.1, y: 0.15, z: -0.2},
-        {x: 0.1, y: 0.15, z: -0.2},
-        {x: -0.1, y: 0.4, z: 0.1},
-        {x: 0.1, y: 0.4, z: 0.1},
-        {x: -0.1, y: 0.4, z: -0.2},
-        {x: 0.1, y: 0.4, z: -0.2}
-      ],
-      connections: [
-        [0, 6], [0, 7], [6, 7], [1, 2], [1, 3], [2, 4], [3, 5], [4, 5], [1, 0], [2, 6], [3, 7],
-        [8, 9], [9, 11], [11, 10], [10, 8], [12, 13], [13, 15], [15, 14], [14, 12], [8, 12], [9, 13], [10, 14], [11, 15],
-        [16, 17], [17, 19], [19, 18], [18, 16], [20, 21], [21, 23], [23, 22], [22, 20], [16, 20], [17, 21], [18, 22], [19, 23],
-        [24, 25], [25, 27], [27, 26], [26, 24], [28, 29], [29, 31], [31, 30], [30, 28], [24, 28], [25, 29], [26, 30], [27, 31]
-      ]
-    },
-    jetty: {
-      vertices: [
-        {x: -0.3, y: 0.7, z: 0.3},
-        {x: 0.3, y: 0.7, z: 0.3},
-        {x: 0.3, y: 0.7, z: -0.3},
-        {x: -0.3, y: 0.7, z: -0.3},
-        {x: -0.3, y: -0.7, z: 0.3},
-        {x: 0.3, y: -0.7, z: 0.3},
-        {x: 0.3, y: -0.7, z: -0.3},
-        {x: -0.3, y: -0.7, z: -0.3},
-        {x: -0.28, y: 0.4, z: 0.28},
-        {x: 0.28, y: 0.4, z: 0.28},
-        {x: 0.28, y: 0.2, z: 0.28},
-        {x: -0.28, y: 0.2, z: 0.28},
-        {x: -0.28, y: 0.4, z: -0.28},
-        {x: 0.28, y: 0.4, z: -0.28},
-        {x: 0.28, y: 0.2, z: -0.28},
-        {x: -0.28, y: 0.2, z: -0.28},
-        {x: -0.28, y: 0.05, z: 0.28},
-        {x: 0.28, y: 0.05, z: 0.28},
-        {x: 0.28, y: -0.15, z: 0.28},
-        {x: -0.28, y: -0.15, z: 0.28},
-        {x: -0.28, y: 0.05, z: -0.28},
-        {x: 0.28, y: 0.05, z: -0.28},
-        {x: 0.28, y: -0.15, z: -0.28},
-        {x: -0.28, y: -0.15, z: -0.28},
-        {x: -0.28, y: -0.3, z: 0.28},
-        {x: 0.28, y: -0.3, z: 0.28},
-        {x: 0.28, y: -0.5, z: 0.28},
-        {x: -0.28, y: -0.5, z: 0.28},
-        {x: -0.28, y: -0.3, z: -0.28},
-        {x: 0.28, y: -0.3, z: -0.28},
-        {x: 0.28, y: -0.5, z: -0.28},
-        {x: -0.28, y: -0.5, z: -0.28}
-      ],
-      connections: [
-        [0, 1], [1, 2], [2, 3], [3, 0], [4, 5], [5, 6], [6, 7], [7, 4], [0, 4], [1, 5], [2, 6], [3, 7],
-        [8, 9], [9, 10], [10, 11], [11, 8], [12, 13], [13, 14], [14, 15], [15, 12], [8, 12], [9, 13], [10, 14], [11, 15],
-        [16, 17], [17, 18], [18, 19], [19, 16], [20, 21], [21, 22], [22, 23], [23, 20], [16, 20], [17, 21], [18, 22], [19, 23],
-        [24, 25], [25, 26], [26, 27], [27, 24], [28, 29], [29, 30], [30, 31], [31, 28], [24, 28], [25, 29], [26, 30], [27, 31]
-      ]
-    }
-  };
-
-  let activeModel = 'face';
-
-  // Listen to switcher button clicks
-  const buttons = document.querySelectorAll('.model-select-btn');
-  buttons.forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      e.stopPropagation(); // Avoid triggering card tilt listener resets
-      buttons.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      activeModel = btn.getAttribute('data-model');
+  const WORDS = ["Java", "Docker", "SQL", "Git", "Spring", "Netty", "JNI", "Cryptography"];
+  
+  // Set up background stars
+  const STARS_COUNT = 50;
+  const stars = [];
+  for (let i = 0; i < STARS_COUNT; i++) {
+    stars.push({
+      x: (Math.random() - 0.5) * 2.8,
+      y: (Math.random() - 0.5) * 2.8,
+      z: (Math.random() - 0.5) * 2.8
     });
+  }
+
+  // Set up word particles
+  const wordParticles = WORDS.map(w => {
+    return {
+      text: w,
+      x: (Math.random() - 0.5) * 2.0,
+      y: (Math.random() - 0.5) * 2.0,
+      z: (Math.random() - 0.5) * 2.0,
+      vx: (Math.random() - 0.5) * 0.006,
+      vy: (Math.random() - 0.5) * 0.006,
+      vz: (Math.random() - 0.5) * 0.006
+    };
   });
 
-  // Helper function to render wireframe face on a canvas
+  // Helper function to render space on a canvas
   function renderFace(canvasId, scale, autoRotSpeed, interactiveCard) {
     const canvas = document.getElementById(canvasId);
     if (!canvas) return;
@@ -455,21 +251,31 @@ function init3DFaceRenderers() {
       // Auto-rotation increment
       angleY += autoRotSpeed;
 
-      // Apply coordinates offsets based on mouse percentage tilts
-      const currentAngleY = angleY + (mousePercentX * 0.95);
-      const currentAngleX = mousePercentY * -0.95;
+      // Apply coordinates offsets based on mouse tilts
+      const currentAngleY = angleY + (mousePercentX * 1.2);
+      const currentAngleX = mousePercentY * -1.2;
 
-      const model = MODELS[activeModel];
+      // Update and bounce word particles
+      wordParticles.forEach(p => {
+        p.x += p.vx;
+        p.y += p.vy;
+        p.z += p.vz;
 
-      // Map vertices with 3D projection formulas (inverted Y to render right-side up)
-      const projected = model.vertices.map(v => {
+        const bound = 1.2;
+        if (p.x > bound || p.x < -bound) p.vx *= -1;
+        if (p.y > bound || p.y < -bound) p.vy *= -1;
+        if (p.z > bound || p.z < -bound) p.vz *= -1;
+      });
+
+      // Projection mapping formula
+      function project(x, y, z) {
         // Rotate Y
-        let x1 = v.x * Math.cos(currentAngleY) - v.z * Math.sin(currentAngleY);
-        let z1 = v.x * Math.sin(currentAngleY) + v.z * Math.cos(currentAngleY);
+        let x1 = x * Math.cos(currentAngleY) - z * Math.sin(currentAngleY);
+        let z1 = x * Math.sin(currentAngleY) + z * Math.cos(currentAngleY);
         
         // Rotate X
-        let y2 = v.y * Math.cos(currentAngleX) - z1 * Math.sin(currentAngleX);
-        let z2 = v.y * Math.sin(currentAngleX) + z1 * Math.cos(currentAngleX);
+        let y2 = y * Math.cos(currentAngleX) - z1 * Math.sin(currentAngleX);
+        let z2 = y * Math.sin(currentAngleX) + z1 * Math.cos(currentAngleX);
         
         // Camera distance projection
         const fov = 3.5;
@@ -479,33 +285,77 @@ function init3DFaceRenderers() {
         const px = x1 * projScale + width / 2;
         const py = -y2 * projScale + height / 2;
         
-        return { x: px, y: py };
+        return { x: px, y: py, z2: z2, scale: projScale };
+      }
+
+      // Draw background stars
+      ctx.fillStyle = 'rgba(255, 255, 255, 0.45)';
+      stars.forEach(s => {
+        const pt = project(s.x, s.y, s.z);
+        const starSize = Math.max(0.6, (2.0 - pt.z2) * 1.1);
+        ctx.beginPath();
+        ctx.arc(pt.x, pt.y, starSize, 0, Math.PI * 2);
+        ctx.fill();
       });
 
-      // Draw wireframe connections
-      ctx.strokeStyle = canvasId === 'logo-3d-face' ? 'rgba(255, 255, 255, 0.7)' : 'rgba(255, 255, 255, 0.82)';
-      ctx.lineWidth = canvasId === 'logo-3d-face' ? 0.8 : 1.1;
+      // Draw thin constellation lines between close words
+      if (canvasId === 'hero-3d-face') {
+        for (let i = 0; i < wordParticles.length; i++) {
+          for (let j = i + 1; j < wordParticles.length; j++) {
+            const p1 = wordParticles[i];
+            const p2 = wordParticles[j];
+            const dx = p1.x - p2.x;
+            const dy = p1.y - p2.y;
+            const dz = p1.z - p2.z;
+            const dist = Math.sqrt(dx * dx + dy * dy + dz * dz);
+            
+            if (dist < 1.1) {
+              const pt1 = project(p1.x, p1.y, p1.z);
+              const pt2 = project(p2.x, p2.y, p2.z);
+              
+              const lineOpacity = Math.min(0.14, (1.1 - dist) * 0.16);
+              ctx.strokeStyle = `rgba(255, 255, 255, ${lineOpacity})`;
+              ctx.lineWidth = 0.55;
+              ctx.beginPath();
+              ctx.moveTo(pt1.x, pt1.y);
+              ctx.lineTo(pt2.x, pt2.y);
+              ctx.stroke();
+            }
+          }
+        }
+      }
 
-      model.connections.forEach(conn => {
-        const p1 = projected[conn[0]];
-        const p2 = projected[conn[1]];
-        if (p1 && p2) {
+      // Draw word labels
+      wordParticles.forEach(p => {
+        const pt = project(p.x, p.y, p.z);
+        const opacity = Math.min(1.0, Math.max(0.12, (2.4 - pt.z2) / 3.2));
+        
+        if (canvasId === 'logo-3d-face') {
+          // Render first letter for miniature header logo
+          ctx.fillStyle = `rgba(255, 255, 255, ${opacity * 0.95})`;
+          ctx.font = `bold ${Math.max(7, Math.round(pt.scale * 0.45))}px "Fira Code", monospace`;
+          ctx.textAlign = 'center';
+          ctx.textBaseline = 'middle';
+          ctx.fillText(p.text[0], pt.x, pt.y);
+        } else {
+          // Render full word for main profile card
+          ctx.fillStyle = `rgba(255, 255, 255, ${opacity})`;
+          const fontSize = Math.max(10, Math.round(pt.scale * 0.16));
+          ctx.font = `bold ${fontSize}px "Outfit", sans-serif`;
+          ctx.textAlign = 'center';
+          ctx.textBaseline = 'middle';
+          
+          // Draw connection point dot
+          ctx.fillStyle = `rgba(255, 255, 255, ${opacity * 0.5})`;
           ctx.beginPath();
-          ctx.moveTo(p1.x, p1.y);
-          ctx.lineTo(p2.x, p2.y);
-          ctx.stroke();
+          ctx.arc(pt.x, pt.y - fontSize * 0.72, 1.8, 0, Math.PI * 2);
+          ctx.fill();
+          
+          // Draw text label
+          ctx.fillStyle = `rgba(255, 255, 255, ${opacity})`;
+          ctx.fillText(p.text, pt.x, pt.y);
         }
       });
-
-      // Draw node dots at intersections for high-tech CAD aesthetic (Hero only)
-      if (canvasId === 'hero-3d-face') {
-        ctx.fillStyle = '#ffffff';
-        projected.forEach(p => {
-          ctx.beginPath();
-          ctx.arc(p.x, p.y, 2.0, 0, Math.PI * 2);
-          ctx.fill();
-        });
-      }
 
       requestAnimationFrame(draw);
     }
@@ -513,9 +363,6 @@ function init3DFaceRenderers() {
   }
 
   // Render loops
-  // 1. Logo Face (Small, 22px diameter scale, constant auto-rotation)
-  renderFace('logo-3d-face', 22, 0.005, false);
-  
-  // 2. Hero profile badge avatar (Large, 175px diameter scale, mouse tilt tracking)
-  renderFace('hero-3d-face', 175, 0.002, true);
+  renderFace('logo-3d-face', 22, 0.004, false);
+  renderFace('hero-3d-face', 165, 0.0015, true);
 }
