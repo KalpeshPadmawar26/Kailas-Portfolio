@@ -550,6 +550,41 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
 }
 
+.model-selector {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.4rem;
+  z-index: 10;
+}
+
+.model-select-btn {
+  background: rgba(0, 0, 0, 0.85);
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.model-select-btn:hover {
+  border-color: var(--border-hover);
+  color: var(--text-primary);
+}
+
+.model-select-btn.active {
+  background: #ffffff;
+  border-color: #ffffff;
+  color: #000000;
+  font-weight: 600;
+}
+
 .badge-graphic-texture {
   width: 100%;
   height: 100%;
